@@ -1,0 +1,333 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sofia-pro, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00b4ed, #3EDEAE);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-start;
+    padding-bottom: 0;
+}
+
+#add-new-list {
+    font-family: sofia-pro, sans-serif;
+    border: none;
+    outline: none;
+    padding: 12px 40px;
+    background: #4761b2;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 40px;
+    margin: 20px 0;
+}
+
+#lists-container {
+    width: 100%;
+    max-width: 600px;
+    overflow-y: auto;
+    padding-bottom: 0;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 20px auto;
+    padding: 30px 30px 50px 50px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
+    color: #4761b2;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    font-family: sofia-pro, sans-serif;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+input::placeholder {
+    opacity: 0.5;
+}
+
+button {
+    font-family: sofia-pro, sans-serif;
+    border: none;
+    outline: none;
+    padding: 12px 40px;
+    background: #4761b2;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 12px 8px 12px 45px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    border: 2px solid #4761b2;
+    background-color: transparent;
+    background-size: cover;
+    top: 10px;
+    left: 0;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/icon.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+.delete-list {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.delete-list:hover {
+    background: #edeef0;
+}
+
+.time {
+    font-size: 2.3rem;
+    color: #4761b2;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    display: none;
+}
+
+.date {
+    font-size: 1.5rem;
+    color: #4761b2;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+}
+
+span.circle {
+    vertical-align: super;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .todo-app {
+        padding: 10px 20px 50px 30px;
+    }
+
+    .todo-app h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        background: none;
+        border-radius: 0;
+        padding-left: 0;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 10px;
+        padding-left: 20px;
+        margin-bottom: 10px; /* Added margin to separate input and button */
+        background: #edeef0;
+        border-radius: 30px;
+    }
+
+    button {
+        padding: 10px 30px;
+        font-size: 1rem;
+        margin-top: 10px;
+     
+        border-radius: 30px; /* Match the input's border-radius */
+    }
+
+    #add-new-list{
+        padding: 10px 30px;
+        font-size: 1rem;
+        margin-top: 10px;
+     
+        border-radius: 30px; /* Match the input's border-radius */
+    }
+
+    ul li {
+        font-size: 1rem;
+        padding: 10px 5px 10px 35px;
+    }
+
+    ul li::before {
+        height: 24px;
+        width: 24px;
+        top: 8px;
+    }
+
+    ul li span {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .time, .date {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-app {
+        padding: 10px 15px 40px 20px;
+    }
+
+    .todo-app h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .row {
+        padding: 5px;
+        background: none;
+        border-radius: 0;
+        padding-left: 0;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 6px;
+        margin-bottom: 10px; /* Added margin to separate input and button */
+        background: #edeef0;
+        border-radius: 30px;
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        
+        border-radius: 30px; /* Match the input's border-radius */
+    }
+
+    ul li {
+        font-size: 0.9rem;
+        padding: 8px 5px 8px 30px;
+    }
+
+    ul li::before {
+        height: 20px;
+        width: 20px;
+        top: 6px;
+    }
+
+    ul li span {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .time, .date {
+        font-size: 1.8rem;
+    }
+}
